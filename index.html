@@ -4,13 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>BKC AR Test</title>
+  <title>BKC AR Robot</title>
+
+  <script type="module"
+    src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+  </script>
 
   <style>
     body {
+      margin: 0;
       font-family: sans-serif;
       text-align: center;
-      padding: 40px 20px;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      margin: 20px 0 5px;
+    }
+
+    p {
+      margin: 5px 15px 15px;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 70vh;
+      background-color: #ffffff;
+    }
+
+    #ar-button {
+      background-color: #0067b8;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -19,13 +48,25 @@
 
   <h1>BKC AR</h1>
 
-  <p>
-    BKC WebAR テストページです。
-  </p>
+  <p>ロボットを3Dで見ることができます。</p>
 
-  <p>
-    このページが表示されれば成功です！
-  </p>
+  <model-viewer
+    src="2026_11_25.glb"
+    alt="BKC Robot 3D Model"
+    camera-controls
+    auto-rotate
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    shadow-intensity="1">
+
+    <button slot="ar-button" id="ar-button">
+      ARで見る
+    </button>
+
+  </model-viewer>
+
+</body>
+</html>
 
 </body>
 </html>
